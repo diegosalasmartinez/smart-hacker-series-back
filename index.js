@@ -24,7 +24,7 @@ app.use(helmet());
 app.use(cors());
 app.use(xss());
 
-app.get('/', (req, res) => { res.send("<h1>Welcome to Smart Hacker Series</h1><p>Developed by Diego Salas and Jefferson Miranda</p>") })
+app.get('/', (req, res) => { res.send("<h1>Welcome to Smart Hacker Series</h1><p>Developed by Diego Salas and Jeferson Miranda</p>") })
 
 const baseUrl = "/api/v1"
 app.use(baseUrl + '/specialties', specialtyRoutes);
