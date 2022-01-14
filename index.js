@@ -9,6 +9,7 @@ const helmet = require('helmet')
 const xss = require('xss-clean')
 const rateLimit = require('express-rate-limit')
 
+const profileRoutes = require('./src/routes/ProfileRoutes')
 const specialtyRoutes = require('./src/routes/SpecialtyRoutes')
 
 const errorHandlerMiddleware = require('./src/middleware/errorHandlerMiddleware')
@@ -28,6 +29,7 @@ app.get('/', (req, res) => { res.send("<h1>Welcome to Smart Hacker Series</h1><p
 
 const baseUrl = "/api/v1"
 app.use(baseUrl + '/specialties', specialtyRoutes);
+app.use(baseUrl + '/profiles', profileRoutes);
 
 app.use(notFoundMiddleware)
 app.use(errorHandlerMiddleware)
