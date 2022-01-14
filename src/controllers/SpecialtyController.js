@@ -3,7 +3,7 @@ const getSpecialties = async (req, res) => {
     //     active: { $eq: true }
     // })
     // res.status(200).json(specialties);
-    res.status(200).json("HOLA");
+    res.status(200).json([]);
 }
 
 const createSpecialty = async (req, res) => {
