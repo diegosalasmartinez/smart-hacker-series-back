@@ -1,39 +1,38 @@
-const Specialty = require('../models/SpecialtyModel')
-
 const getSpecialties = async (req, res) => {
-    const specialties = await Specialty.find({
-        active: { $eq: true }
-    })
-    res.status(200).json(specialties);
+    // const specialties = await Specialty.find({
+    //     active: { $eq: true }
+    // })
+    // res.status(200).json(specialties);
+    res.status(200).json("HOLA");
 }
 
 const createSpecialty = async (req, res) => {
-    const specialty = req.body;
-    const newSpecialty = new Specialty({
-        code: specialty.code,
-        name: specialty.name, 
-    })
+    // const specialty = req.body;
+    // const newSpecialty = new Specialty({
+    //     code: specialty.code,
+    //     name: specialty.name, 
+    // })
 
-    const specialtyCreated = await newSpecialty.save();
-    res.status(201).json(specialtyCreated);
+    // const specialtyCreated = await newSpecialty.save();
+    // res.status(201).json(specialtyCreated);
 }
 
 const updateSpecialty = async (req, res) => {
-    const { id } = req.params;
-    const specialty = req.body;
-    const { code, name } = specialty;
-    const updatedSpecialty = { code, name };
+    // const { id } = req.params;
+    // const specialty = req.body;
+    // const { code, name } = specialty;
+    // const updatedSpecialty = { code, name };
 
-    await Specialty.findOneAndUpdate({_id: id}, updatedSpecialty, { new: true });
-    res.status(201).json({message: "Specialty updated successfully"});
+    // await Specialty.findOneAndUpdate({_id: id}, updatedSpecialty, { new: true });
+    // res.status(201).json({message: "Specialty updated successfully"});
 }
 
 const deleteSpecialty = async (req, res) => {
-    const { id } = req.params;
-    const updatedSpecialty = { active: false }; 
+    // const { id } = req.params;
+    // const updatedSpecialty = { active: false }; 
 
-    await Specialty.findOneAndUpdate({_id: id}, updatedSpecialty, { new: true });
-    res.status(200).json({message: "Specialty deleted successfully"});
+    // await Specialty.findOneAndUpdate({_id: id}, updatedSpecialty, { new: true });
+    // res.status(200).json({message: "Specialty deleted successfully"});
 }
 
 module.exports = {
